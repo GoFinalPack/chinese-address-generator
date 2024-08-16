@@ -1,8 +1,8 @@
 package chinese_address_generator
 
 import (
-	chineseaddressgenerator "chinese-address-generator"
 	"fmt"
+	chineseaddressgenerator "github.com/GoFinalPack/chinese-address-generator"
 	"testing"
 )
 

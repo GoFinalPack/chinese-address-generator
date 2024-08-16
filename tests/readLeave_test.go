@@ -1,7 +1,7 @@
 package chinese_address_generator
 
 import (
-	"chinese-address-generator/utils"
+	"github.com/GoFinalPack/chinese-address-generator/utils"
 	"os"
 	"testing"
 )
@@ -13,7 +13,9 @@ func TestReadLevel4(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer os.Remove(file.Name())
+	defer func(name string) {
+		_ = os.Remove(name)
+	}(file.Name())
 
 	// 写入测试数据
 	_, err = file.WriteString(`{"code":"123","region":"Test Region"}`)

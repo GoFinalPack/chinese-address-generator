@@ -1,7 +1,7 @@
 package chinese_address_generator
 
 import (
-	"chinese-address-generator/utils"
+	utils "github.com/GoFinalPack/chinese-address-generator/utils"
 	"math/rand"
 )
 
