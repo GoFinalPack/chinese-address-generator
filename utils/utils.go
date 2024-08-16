@@ -2,11 +2,10 @@ package utils
 
 import (
 	"bufio"
+	"embed"
 	"encoding/json"
 	"fmt"
 	"math/rand"
-	"os"
-	"path/filepath"
 	"strings"
 	"time"
 )
@@ -32,28 +31,35 @@ var Level3 []Level3Data
 var Level4 []Level4Data
 var level4Map map[string][]RegionEntity
 
+//go:embed data/level3.json
+var level3File embed.FS
+
+//go:embed data/level4.txt
+var level4File embed.FS
+
 // ReadLevel3 读取 level3.json 文件并解析为 Level3 列表
 func ReadLevel3() {
-	cwd, _ := os.Getwd()
-	absPath := filepath.Join(cwd, "../data/level3.json")
-	dataBytes, _ := os.ReadFile(absPath)
-	_ = json.Unmarshal(dataBytes, &Level3)
-}
-
-// ReadLevel4 读取 level4.txt 文件并解析为 Level4 列表
-func ReadLevel4() {
-	cwd, _ := os.Getwd()
-	absPath := filepath.Join(cwd, "../data/level4.txt")
-	file, err := os.Open(absPath)
+	dataBytes, err := level3File.ReadFile("data/level3.json")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
-	defer func(file *os.File) {
-		_ = file.Close()
-	}(file)
 
-	scanner := bufio.NewScanner(file)
+	err = json.Unmarshal(dataBytes, &Level3)
+	if err != nil {
+		fmt.Println("Error unmarshalling JSON:", err)
+	}
+}
+
+// ReadLevel4 读取 level4.txt 文件并解析为 Level4 列表
+func ReadLevel4() {
+	data, err := level4File.ReadFile("data/level4.txt")
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	scanner := bufio.NewScanner(strings.NewReader(string(data)))
 	for scanner.Scan() {
 		line := scanner.Text()
 		fields := strings.Split(line, ",")
@@ -68,6 +74,10 @@ func ReadLevel4() {
 			Region: fields[1],
 		}
 		Level4 = append(Level4, data)
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
 	}
 }
 
