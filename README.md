@@ -21,3 +21,18 @@
 	fullAddress := g.FabricateFullAddress()  // 生成完整地址
     fmt.Println(fullAddress)     // {"code": "622926209000", "region": "甘肃省临夏回族自治州东乡族自治县五家乡1115号182室", "buildNo": 1115, "roomNo": 182}
 ```
+P.S.: 生成规则:(001-1400)号(101-909)室
+
+### 原项目地址
+
+```
+https://github.com/NiZerin/chinese-address-generator/tree/main   PHP
+
+https://github.com/moonrailgun/chinese-address-generator     Node
+
+```
+### 关于贡献
+
+基于MIT开源协议
+
+
