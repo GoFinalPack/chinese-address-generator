@@ -4,6 +4,11 @@
 ### 数据
 数据在data文件夹中, 可以自己实现想要的相关逻辑
 
+### 安装依赖
+
+```shell
+go get github.com/GoFinalPack/chinese-address-generator@v1.0.0
+```
 
 ### 生成地址
 
