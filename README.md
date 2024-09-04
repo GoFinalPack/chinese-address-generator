@@ -35,10 +35,13 @@ https://github.com/NiZerin/chinese-address-generator/tree/main   PHP
 
 https://github.com/moonrailgun/chinese-address-generator     Node
 
-## Stargazers over time
+```
+
+
+#### Stargazers over time
 [![Stargazers over time](https://starchart.cc/GoFinalPack/chinese-address-generator.svg?variant=adaptive)](https://starchart.cc/GoFinalPack/chinese-address-generator)
 
-```
+
 ### 关于贡献
 
 基于MIT开源协议
