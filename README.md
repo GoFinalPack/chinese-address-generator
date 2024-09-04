@@ -21,7 +21,7 @@ go get github.com/GoFinalPack/chinese-address-generator@v1.0.0
     fmt.Println(level2)          // {"code": "620100", "region": "甘肃省兰州市"}
 	level3 := g.GenerateLevel3() // 三级地址
     fmt.Println(level3)          // {"code": "350205", "region": "福建省厦门市海沧区"}
-    level4 := g.GenerateLevel4() // 四级地址 
+    level4 := g.GenerateLevel4() // 四级地址
     fmt.Println(level4)          // {"code": "310113111000", "region": "上海市市辖区宝山区高境镇"}
 	fullAddress := g.FabricateFullAddress()  // 生成完整地址
     fmt.Println(fullAddress)     // {"code": "622926209000", "region": "甘肃省临夏回族自治州东乡族自治县五家乡1115号182室", "buildNo": 1115, "roomNo": 182}
@@ -35,9 +35,14 @@ https://github.com/NiZerin/chinese-address-generator/tree/main   PHP
 
 https://github.com/moonrailgun/chinese-address-generator     Node
 
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/GoFinalPack/chinese-address-generator.svg?variant=adaptive)](https://starchart.cc/GoFinalPack/chinese-address-generator)
+
 ```
 ### 关于贡献
 
 基于MIT开源协议
+
+
 
 
